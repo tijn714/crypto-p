@@ -6,10 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INVALID_CHAR                                                           \
-  perror("Invalid character in input string");                                 \
-  return 1;
-
 int base64_index(char c);
 
 // Function to transform data to base64
@@ -55,7 +51,7 @@ int base64_index(char c) {
       return i;
     }
   }
-  INVALID_CHAR;
+  return -1;
 }
 
 bool isEqual(uint8_t *a, uint8_t *b, int len) {

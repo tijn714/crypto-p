@@ -21,7 +21,7 @@ int main(void) {
   // Display results
   printf("Original Data: ");
   for (int i = 0; i < dataLength; ++i) {
-    printf("%02x", originalData[i]);
+    printf("%c", originalData[i]);
   }
   printf("\n");
 
@@ -29,7 +29,7 @@ int main(void) {
 
   printf("Decoded Data : ");
   for (int i = 0; i < dataLength; ++i) {
-    printf("%02x", decodedData[i]);
+    printf("%c", decodedData[i]);
   }
   printf("\n");
 

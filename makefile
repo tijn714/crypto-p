@@ -1,16 +1,24 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Wpedantic -std=c99
 
-all: aes sha256 stsio
+SRC_AES = aes.c 
+SRC_STSIO = stsio.c
+SRC_SHA256 = sha256.c
+TARGET_AES = aes
+TARGET_STSIO = stsio
+TARGET_SHA256 = sha256
 
-aes: aes.c
-    $(CC) $^ -o $@ $(CFLAGS)
+all:  $(TARGET_AES) $(TARGET_STSIO) $(TARGET_SHA256)
 
-sha256: sha256.c
-    $(CC) $^ -o $@ $(CFLAGS)
+$(TARGET_AES): $(SRC_AES)
+	$(CC) $(CFLAGS) -o $(TARGET_AES) $(SRC_AES)
 
-stsio: stsio.c
-    $(CC) $^ -o $@ $(CFLAGS)
+$(TARGET_STSIO): $(SRC_STSIO)
+	$(CC) $(CFLAGS) -o $(TARGET_STSIO) $(SRC_STSIO)
+
+$(TARGET_SHA256): $(SRC_SHA256)
+	$(CC) $(CFLAGS) -o $(TARGET_SHA256) $(SRC_SHA256)
+
 
 clean:
-    rm -f aes sha256 stsio
+	rm -f $(TARGET_AES) $(TARGET_STSIO) $(TARGET_SHA256)

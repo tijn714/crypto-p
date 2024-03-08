@@ -1,0 +1,4 @@
+Original Data: Hello
+Encoded Data : SGVsbG8=
+Decoded Data : Hello
+Equality Test Result: Passed
